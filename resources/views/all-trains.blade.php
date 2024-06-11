@@ -32,20 +32,20 @@
                 @if ($train->in_time === 0)
                     <td>No</td>
                 @else
-                    <td>Si</td>
+                    <td>Yes</td>
                 @endif
 
                 @if ($train->cancelled === 0)
                     <td>No</td>
                 @else
-                    <td>Si</td>
+                    <td>Yes</td>
                 @endif
 
 
                 @if ($train->date === date("Y-m-d"))
-                <td> Oggi </td>
+                <td> Today </td>
                 @elseif ($train->date === date("Y-m-d", strtotime('+1 day')))
-                <td> Domani </td>
+                <td> Tomorrow </td>
                 @else
                 <td> {{ $train->date }} </td>
                 @endif

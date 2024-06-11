@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name("home");
 
 
 Route::get('/today-trains', [TrainController::class, 'filtered'])->name('today-trains');
