@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AllTrainsController;
 use App\Http\Controllers\TrainController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +20,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('/trains', [TrainController::class, 'index'])->name('trains');
+Route::get('/today-trains', [TrainController::class, 'filtered'])->name('today-trains');
+
+Route::get('/all-trains', [TrainController::class, 'all'])->name('all-trains');
