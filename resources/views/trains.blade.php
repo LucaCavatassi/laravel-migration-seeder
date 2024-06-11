@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <table class="table">
+    <table class="table table-striped table-danger table-hover">
         <thead>
             <tr>
                 <th scope="col">#</th>
