@@ -7,8 +7,22 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
-     */
+    * Run the migrations.
+    * 
+    * UPDATE TABLE "trains" (
+    *  ‘company’ VARCHAR(255) NOT NULL, // impossibile che sia vuoto e quindi not null
+    *  ‘departure’ VARCHAR(255) NOT NULL, // impossibile che sia vuoto e quindi not null
+    *  ‘arrival’ VARCHAR(255) NOT NULL, // impossibile che sia vuoto e quindi not null
+    *  ‘time_departure’ TIME, //
+    *  ‘time_arrival’ TIME, //
+    *  ‘code’ VARCHAR(255) NOT NULL, // impossibile che sia vuoto e quindi not null
+    *  ‘price’ DECIMAL(10,2) NOT NULL,
+    *  ‘cabin numbers’ UNSIGNED TINIYNT NOT NULL // impossibile che sia vuoto e quindi not null
+    *  ‘in_time’ TINIYNT NOT NULL DEFAULT(1) // true è(1),non c’è boolean in mysql quindi TINYINT
+    *  ‘cancelled’ TINIYNT NOT NULL DEFAULT(0) // false è(0),non c’è boolean in mysql quindi TINYINT
+    * 
+    * )
+    */
     public function up(): void
     {
         Schema::table('trains', function (Blueprint $table) {
@@ -27,6 +41,7 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
+     * Per ogni colonna funzione in caso di rollback per cancellarla.
      */
     public function down(): void
     {
