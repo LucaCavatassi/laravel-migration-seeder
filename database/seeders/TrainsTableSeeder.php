@@ -21,7 +21,7 @@ class TrainsTableSeeder extends Seeder {
             $newTrain->arrival = $faker->city();
             $newTrain->time_departure = $faker->time();
             $newTrain->time_arrival = $faker->time();
-            $newTrain->code = $faker->asciify('*****');
+            $newTrain->code = $faker->regexify('[A-Z0-9]{5}');
             $newTrain->cabin_numbers = $faker->randomDigitNotNull();
             $newTrain->in_time = $faker->boolean();
             $newTrain->cancelled = $faker->boolean();
