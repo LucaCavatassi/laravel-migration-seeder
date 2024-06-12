@@ -25,7 +25,7 @@ class TrainsTableSeeder extends Seeder {
         $newTrain->cabin_numbers = $faker->randomDigitNotNull();
         $newTrain->in_time = $faker->boolean();
         $newTrain->cancelled = $faker->boolean();
-        $newTrain->date = $faker->date('Y_m_d');
+        $newTrain->date = $faker->dateTimeInInterval('-1 week', '+3 days');
         // dd($newTrain); // Stamperà un model di house
         
         $newTrain->save(); // Per salvare i dati e aggiungerli al database
