@@ -14,7 +14,7 @@ class TrainController extends Controller
     }
 
     public function all() {
-        $trains = Train::all();
+        $trains = Train::all()->sortBy("date");
         return view("all-trains", compact("trains"));
     }
 }
